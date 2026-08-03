@@ -1,0 +1,9 @@
+name: t2k_js_de_dsb_2025-08-01_lmu
+directions:
+- de_dsb
+trainer: Hannah Seltmann
+traindate: '2025-08-01'
+ext: true
+aggressive_dash_splits: true
+BLEU_score: 43.745
+TER_score: 41.1956
