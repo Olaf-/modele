@@ -1,28 +1,53 @@
+# model_config.yaml listet pro gültiger Übersetzungsrichtung auf, in welchen Verzeichnissen Modelle für diese Richtung einsetzbar sind
+# Der erste Eintrag ist das default-Modell, welches zum Einsatz kommt, wenn bei der Übersetzungsanfrage kein Modell spezifiziert wurde
+# Editierende von model_config.yaml sind für sinnvolle und gültige Einträge verantwortlich!
+
+# Jedes Modell führt in seinem Verzeichnis in der Datei model_info.yaml zugehörige Metadaten auf, z.B. Name, Trainer, BLEU-Score usw.
+
+# Obersorbisch -> Deutsch
 hsb_de:
-- 2024-07-31_hsb2de
+- 2024-07-31_hsb2de # default-Modell
 - 2024-02-27_hsb2de
-- 2024-04-09_hsb2de_de2hsb
+- 2024-04-09_hsb2de_de2hsb # Multilanguage-Modell, geeignet für hsb_de und de_hsb, es wird daher zweimal angegeben
 - 2022-02-02_hsb2de
+
+# Obersorbisch -> Niedersorbisch
 hsb_dsb:
 - 2022-01-26_hsb2dsb
+
+# Obersorbisch -> Tschechisch
 hsb_cs:
 - 2023-02-17_hsb2cs
+
+# Deutsch -> Obersorbisch
 de_hsb:
 - stojanowski_jul_2025_de_hsb
 - 2024-08-09_de2hsb
 - 2024-02-28_de2hsb
-- 2024-04-09_hsb2de_de2hsb
+- 2024-04-09_hsb2de_de2hsb # Multilanguage-Modell, s.o. bei hsb_de
 - 2022-02-02_de2hsb
+
+# Deutsch -> Niedersorbisch
 de_dsb:
 - stojanowski_jul_2025_de_dsb
 - 2022-02-02_de2dsb
+
+# Niedersorbisch -> Obersorbisch
 dsb_hsb:
 - 2022-02-02_dsb2hsb
+
+# Niedersorbisch -> Deutsch
 dsb_de:
 - 2022-02-02_dsb2de
+
+# Niedersorbisch -> Tschechisch
 dsb_cs:
 - 2023-02-17_dsb2cs
+
+# Tschechisch -> Obersorbisch
 cs_hsb:
 - 2023-02-17_cs2hsb
+
+# Tschechisch -> Niedersorbisch
 cs_dsb:
 - 2023-02-17_cs2dsb
