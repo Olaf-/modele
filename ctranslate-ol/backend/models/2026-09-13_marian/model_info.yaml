@@ -1,0 +1,9 @@
+name: marian_trained
+directions:
+- hsb_de
+- de_hsb
+trainer: Olaf Langner
+traindate: '2026-09-13'
+ext: true
+BLEU_score: 
+TER_score: 

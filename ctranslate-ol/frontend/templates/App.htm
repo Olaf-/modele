@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<title>tranSister</title>
+	<link href="/App.css" rel="stylesheet">
+	<!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<script src="/guessLanguage.js"></script>
+	<script src="/App.js"></script>
+</head>
+
+<body onload="init()">
+<div class="wrapper">
+	<div class="header">
+		<form>
+			<select id="inlang" title="{{inlang}}" aria-label="{{inlang}}" name="from">
+				<option value="neutral">{{neutral}}</option>
+				<option value="hsb">{{hsb}}</option>
+				<option value="dsb">{{dsb}}</option>
+				<option value="de" notto="cs">{{de}}</option>
+				<option value="cs" notto="de">{{cs}}</option>
+			</select>
+			<input id="swaplang-button" type="button" aria-label="Sprachen wechseln">
+			<select id="outlang" title="{{outlang}}" aria-label="{{outlang}}"  name="to">
+				<option value="hsb">{{hsb}}</option>
+				<option value="dsb">{{dsb}}</option>
+				<option value="de" selected>{{de}}</option>
+				<option value="cs">{{cs}}</option>
+			</select>
+			<div class="split-button">
+				<input id="translate-button" type="button" value="{{translate}}" class="main-btn" unk="{{unknown}}" aria-label="{{translate}}" disabled>
+				<div class="dropdown">
+					<button id="dropdown-button" class="dropdown-btn" title="available models" disabled></button>
+					<ul class="dropdown-menu"></ul>
+				</div>
+			</div>
+			<input id="showbreak-toggle" type="checkbox" title="{{showbreaks}}" aria-label="{{showbreaks}}">
+			<input id="spellcheck-toggle" type="checkbox" title="{{spellcheck}}" aria-label="{{spellcheck}}">
+		</form>
+	</div>
+
+	<div class="links">
+		<form>
+			<input id="clear-button" type="button" title="{{clearx}}" aria-label="{{clearx}}">
+		</form>
+		<div id="input-box" contenteditable="plaintext-only" spellcheck="false"></div>
+		<!-- <div id="input-box" contenteditable="plaintext-only" spellcheck="false" x-text="content" x-on:input="content=$event.target.innerText"></div>
+		<textarea id="input-box" spellcheck="false" x-model="content"></textarea> -->
+	</div>
+
+	<div class="rechts">
+		<form>
+			<select id="download" type="button" title="{{download}}" aria-label="{{download}}" fname="{{ttable}}">
+				<option value="" selected style="display: none"></option>
+				<option value="twocol">{{twocol}}</option>
+				<option value="multicol">{{multicol}}</option>
+				<option value="unks_only">{{unks_only}}</option>
+			</select>
+		</form>
+		<div id="output-box"></div>
+	</div>
+
+	<div class="footer">
+		<br>{{footer}}
+	</div>
+</div>
+</body>
+</html>

@@ -1,9 +1,0 @@
-name: witaj_mm_hsb_cs_2023-02-17
-directions:
-- hsb_cs
-trainer: Marko Meškank
-traindate: '2023-02-17'
-ext: false
-aggressive_dash_splits: false
-BLEU_score: 
-TER_score: 

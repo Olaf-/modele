@@ -1,9 +1,0 @@
-name: t2k_js_de_hsb_2025-02-17_lmu
-directions:
-- de_hsb
-trainer: Hannah Seltmann
-traindate: '2025-07-17'
-ext: true
-aggressive_dash_splits: true
-BLEU_score: 64.5 (altes Testset)
-TER_score: 22.6 (altes Testset)
