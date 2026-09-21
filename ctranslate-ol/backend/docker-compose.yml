@@ -1,0 +1,41 @@
+services:
+  backend:
+    build: ./backend
+
+    container_name: ctranslator
+
+    expose:
+    - "5000"
+
+    ports:
+      - "5000:5000"
+
+    volumes:
+      - ./backend/models:/app/models
+      - ./backend/nonbreaking_prefixes:/app/nonbreaking_prefixes
+      - ./backend/CTranslator.py:/app/CTranslator.py
+      - type: bind
+        source: ./backend/version.txt
+        target: /app/version.txt
+
+  frontend:
+    build: ./frontend
+
+    container_name: transister
+
+    environment:
+      BACKEND_URL: http://backend:5000
+
+    expose:
+      - "3000"
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - ./frontend/templates:/app/templates
+      - ./frontend/dictionaries:/app/dictionaries
+      - ./frontend/tranSister.py:/app/tranSister.py
+
+    depends_on:
+      - backend
